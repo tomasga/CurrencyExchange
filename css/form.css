@@ -1,0 +1,33 @@
+.form {
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(10, 20, 110);
+    border: 2px solid #edf1ea;
+    border-radius: 10px;
+    box-shadow: 4px 2px 8px #e8eee9;
+    /* text-align: justify; */
+    line-height: 2;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.form__input {
+    inline-size: 20ch;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.form__currency {
+    max-width: 3em;
+}
+
+.form__amount {
+    max-width: 12em;
+}
+
+.form__amount--grey {
+    background-color: rgb(200, 200, 200);
+}
+
+.form__disclaimer {
+    font-size: smaller;
+}
