@@ -10,7 +10,11 @@ html {
     text-align: center;
 }
 .body {
+    background-image: url(../images/money.jpg);
     background-color: black;
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position: center;
     max-width: 400px;
     margin: auto;
     color: rgb(200, 200, 200);
