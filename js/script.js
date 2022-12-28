@@ -1,51 +1,48 @@
-let formElement = document.querySelector(".js-formElement")
-let formInputValue = document.querySelector(".js-inputValue");
-let formOutputValue = document.querySelector(".js-outputValue");
-let formCurrencyHave = document.querySelector(".js-currencyHave");
-let formCurrencyWant = document.querySelector(".js-currencyWant");
-let eureur = 1;
-let eurpln = 4.73;
-let eurtry = 18.14;
+{
+    const currencyHaveCalculation = (eureur, eurpln, eurtry) => {
+        const formCurrencyHave = document.querySelector(".js-currencyHave");
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-     
-    let inputValue = formInputValue.value;
-    let currencyHave = formCurrencyHave.value;
-    let currencyWant = formCurrencyWant.value;
-    
-    let referenceEuroValue
-    switch(currencyHave) {
- 
-        case("pln"):
-            referenceEuroValue = eureur/eurpln;
-        break;
-    
-        case("eur"):
-            referenceEuroValue = eureur/eureur;
-        break;
-    
-        case("try"):
-            referenceEuroValue = eureur/eurtry;
-        break;
-    }
+        switch (formCurrencyHave.value) {
+            case ("pln"):
+                return eureur / eurpln;
+            case ("eur"):
+                return eureur / eureur;
+            case ("try"):
+                return eureur / eurtry;
+        };
+    };
 
-    let outputValue
-    switch(currencyWant) {
- 
-        case("pln"):
-            outputValue = referenceEuroValue*inputValue*eurpln;
-        break;
-    
-        case("eur"):
-            outputValue = referenceEuroValue*inputValue*eureur;
-        break;
-    
-        case("try"):
-            outputValue = referenceEuroValue*inputValue*eurtry;
-        break;
-    }
-    
-    outputValue = outputValue.toFixed(2);
-    formOutputValue.value = outputValue;
-})
+    const currencyWantCalculation = () => {
+        const eureur = 1;
+        const eurpln = 4.73;
+        const eurtry = 18.14;
+        const formInputValue = document.querySelector(".js-inputValue");
+        const formCurrencyWant = document.querySelector(".js-currencyWant");
+        
+        switch (formCurrencyWant.value) {
+            case ("pln"):
+                return currencyHaveCalculation(eureur, eurpln, eurtry) * formInputValue.value * eurpln;
+            case ("eur"):
+                return currencyHaveCalculation(eureur, eurpln, eurtry) * formInputValue.value * eureur;
+            case ("try"):
+                return currencyHaveCalculation(eureur, eurpln, eurtry) * formInputValue.value * eurtry;
+        };
+    };
+
+    const outputResults = () => {
+        const formOutputValue = document.querySelector(".js-outputValue");
+        formOutputValue.value = currencyWantCalculation().toFixed(2);
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-formElement")
+        
+        formElement.addEventListener("submit", (event) => {
+            event.preventDefault();
+            outputResults();
+        });
+
+    };
+
+    init();
+};
