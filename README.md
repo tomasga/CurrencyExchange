@@ -16,5 +16,8 @@ https://tomasga.github.io/CurrencyExchange/
 
 ## Changes:
 
-## 27SEP2022
+27SEP2022
 -background image and icon added
+
+28DEC2022
+-functions added in js code
