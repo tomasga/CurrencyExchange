@@ -21,3 +21,6 @@ https://tomasga.github.io/CurrencyExchange/
 
 28DEC2022
 -functions added in js code
+
+31DEC2022
+-og image added
